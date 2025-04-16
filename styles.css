@@ -15,7 +15,9 @@ html , body{
     width: 100%;
 }
 
-header {
+/* page strucutre w/o using grid */
+
+/* header {
     height: var(--header-height);
     width: calc(100vw - var(--nav-width));
     margin-left: auto;
@@ -31,4 +33,26 @@ main {
     width: calc(100vw - var(--nav-width));
     margin-top: auto;
     margin-left: auto;
+} */
+
+/*  page strucure using grid */
+
+body {
+    display: grid;
+    grid-template-columns: var(--nav-width) auto;
+    grid-template-rows: var(--header-height) auto;
+    grid-template-areas: "sidebar header"
+                         "sidebar main";
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: sidebar;
+}
+
+main {
+    grid-area: main;
 }
