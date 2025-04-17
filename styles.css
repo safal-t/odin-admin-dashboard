@@ -10,9 +10,10 @@
     box-sizing: border-box;
 }
 
-html , body{
+html, body{
     min-height: 100vh;
     width: 100%;
+    font-family: "Roboto", sans-serif;
 }
 
 /* page strucutre w/o using grid */
@@ -52,10 +53,18 @@ header {
 nav {
     grid-area: sidebar;
     display: grid;
-    grid-template-rows: 4rem repeat(12, 2rem);
-    gap: 1rem;
+    grid-template-rows: 8rem repeat(12, 4rem);
+    gap: 2rem;
     padding: 1rem;
+    background-color: hsl(206, 89%, 61%);
 }
+
+nav, a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+}
+
 
 main {
     grid-area: main;
