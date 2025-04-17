@@ -2,6 +2,8 @@
     --font-size: 16px;
     --header-height: 400px;
     --nav-width: 500px;
+    --blue: hsl(206, 89%, 61%);
+    --secondary-color: hsl(0, 13%, 95%);
 }
 
 *{
@@ -48,6 +50,71 @@ body {
 
 header {
     grid-area: header;
+    display: grid;
+    grid-template-columns: 0.5fr repeat(11, 1fr);
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-areas: "search-img search-bar search-bar search-bar search-bar search-bar search-bar search-bar . top-right-header top-right-header top-right-header" 
+                         "large-profile-img user-info user-info user-info user-info user-info . . . new-btn upload-btn share-btn";
+    padding: 3rem;
+    padding-bottom: 0;
+}
+
+header button {
+    height: 4rem;
+    margin: 1rem;
+    font-size: 2rem;
+    align-self: center;
+    color: white;
+    background-color:var(--blue);
+    border-radius: 50px;
+    border: none;
+}
+
+
+.search-img {
+    grid-area: search-img;
+}
+
+.search-bar {
+    grid-area: search-bar;
+    background-color: var(--secondary-color);
+    border-radius: 100px;
+    height: 3rem;
+}
+
+.top-right-header {
+    grid-area: top-right-header;
+    display: flex;
+    justify-content: center;
+    gap: 2rem
+}
+
+.user-info {
+    font-size: 1.5rem;
+    grid-area: user-info;
+    align-self: center;
+}
+
+.new-btn {
+    grid-area: new-btn;
+}
+
+.upload-btn {
+    grid-area: upload-btn;
+}
+
+.share-btn {
+    grid-area: share-btn;
+}
+
+.large-profile-img {
+    grid-area: large-profile-img;
+    height: 6rem;
+    align-self: center;
+}
+
+header img {
+    height: 2.5rem;
 }
 
 nav {
@@ -68,7 +135,7 @@ nav {
                          "privacy";
     gap: 2rem;
     padding: 2rem;
-    background-color: hsl(206, 89%, 61%);
+    background-color: var(--blue);
 }
 
 .dashboard {
@@ -119,6 +186,7 @@ nav, a {
 
 main {
     grid-area: main;
+    background-color: var(--secondary-color);
 }
 
 nav img {
@@ -135,3 +203,4 @@ nav img {
     display: flex;
     align-items: center;
 }
+
